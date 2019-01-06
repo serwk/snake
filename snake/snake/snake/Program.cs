@@ -16,20 +16,11 @@ namespace snake
             Point p2 = new Point(4, 5, '#');
             p2.Draw();
 
-            Point p3 = new Point(2, 4, '+');
-            Point p4 = new Point(5, 1, '/');
+            HorizontalLine hline = new HorizontalLine(5, 10, 8, '+');
+            hline.Drow();
 
-            List<Point> pList = new List<Point>();
-            pList.Add(p1);
-            pList.Add(p2);
-            pList.Add(p3);
-            pList.Add(p4);
-
-            List<char> cList = new List<char>();
-            cList.Add('*');
-            cList.Add('|');
-            cList.Add('+');
-            cList.Add('=');
+            VerticalLine vline = new VerticalLine(3, 7, 2, '#');
+            vline.Drow();
 
             Console.ReadLine();
         }
