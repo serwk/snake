@@ -14,7 +14,7 @@ namespace snake
         {
             direction = _direction;
             pList = new List<Point>();
-            for(int i = 0; i< lenght; i++)
+            for (int i = 0; i < lenght; i++)
             {
                 Point p = new Point(tail);
                 p.Move(i, direction);
@@ -53,6 +53,20 @@ namespace snake
             else if (key == ConsoleKey.UpArrow)
                 direction = Direction.UP;
         }
+
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(food))
+            {
+                food.sym = head.sym;
+                pList.Add(food);
+                return true;
+            }
+            else
+                return false;
+        }
+
 
     }
 }
